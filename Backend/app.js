@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 
 
-const stuffRoutes = require('./routes/stuff');
+const bookRoutes = require('./routes/books');
 const userRoutes = require('./routes/user');
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/api/stuff', stuffRoutes);
+app.use('/api/books', bookRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
